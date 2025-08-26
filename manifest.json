@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "Land Listing Capture",
+  "version": "1.1",
+  "permissions": ["activeTab", "scripting", "downloads", "storage", "clipboardWrite"],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ],
+  "options_page": "options.html"
+}
